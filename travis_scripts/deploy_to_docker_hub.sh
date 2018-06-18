@@ -1,5 +1,5 @@
 echo "Pushing service docker images to docker hub ...."
-docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 docker push motoguard/authservice:$BUILD_NAME
 docker push motoguard/rawdataservice:$BUILD_NAME
 docker push motoguard/watchservice:$BUILD_NAME
