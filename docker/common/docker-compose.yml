@@ -18,7 +18,7 @@ configserver:
 
 zuulserver:
     image: motoguard/routingservice:${BUILD_NAME}
-    mem_limit: 1073741824
+    mem_limit: 2073741824
     ports:
       - "5555:5555"
     links:
