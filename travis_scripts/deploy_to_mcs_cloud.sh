@@ -1,2 +1,2 @@
 echo "Launching $BUILD_NAME IN K8s"
-kompose up -f docker/common/docker-compose.yml
+docker run -v ${TRAVIS_BUILD_DIR}/kubernetes:/kube smesch/kubectl kubectl --kubeconfig /kube/kubeconfig apply -f kube

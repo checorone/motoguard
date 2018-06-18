@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f ../docker/common/docker-compose.yml
+    kompose.version: 1.12.0 (0ab07be)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: authenticationservice
+  name: authenticationservice
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: authenticationservice
+    spec:
+      containers:
+      - env:
+        - name: CONFIGSERVER_URI
+          value: http://configserver:8888
+        - name: ENCRYPT_KEY
+          value: IMSYMMETRIC
+        - name: EUREKASERVER_URI
+          value: http://eurekaserver:8761/eureka/
+        - name: PROFILE
+          value: aws-dev
+        - name: SERVER_PORT
+          value: "8901"
+        image: motoguard/authservice:BUILD_NAME
+        name: authenticationservice
+        ports:
+        - containerPort: 8901
+        resources:
+          limits:
+            memory: "1073741824"
+      restartPolicy: Always
+status: {}

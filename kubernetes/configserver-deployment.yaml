@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f ../docker/common/docker-compose.yml
+    kompose.version: 1.12.0 (0ab07be)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: configserver
+  name: configserver
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: configserver
+    spec:
+      containers:
+      - env:
+        - name: ENCRYPT_KEY
+          value: IMSYMMETRIC
+        - name: EUREKASERVER_URI
+          value: http://eurekaserver:8761/eureka/
+        image: motoguard/configservice:BUILD_NAME
+        name: configserver
+        ports:
+        - containerPort: 8888
+        resources:
+          limits:
+            memory: 1e9
+      restartPolicy: Always
+status: {}

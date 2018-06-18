@@ -17,15 +17,14 @@ branches:
   - master
 before_install:
 - gem install travis -v 1.8.5 --no-rdoc --no-ri
-- sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-- chmod +x ./kubectl
-- sudo mv ./kubectl /usr/local/bin/kubectl
-- export BUILD_NAME=motoguard_services-$TRAVIS_BRANCH-$(date -u "+%Y%m%d%H%M%S")-$TRAVIS_BUILD_NUMBER
-- export CONTAINER_IP=54.215.193.139
-- export PLATFORM_TEST_NAME="mtg-platform-tests"
+- export BUILD_NAME=beta-$TRAVIS_BRANCH-$(date -u "+%Y%m%d%H%M%S")-$TRAVIS_BUILD_NUMBER
+- sed -i -e 's|KUBE_CA_CERT|'"${KUBE_CA_CERT}"'|g' kubernetes/kubeconfig
+- sed -i -e 's|KUBE_ENDPOINT|'"${KUBE_ENDPOINT}"'|g' kubernetes/kubeconfig
+- sed -i -e 's|KUBE_ADMIN_CERT|'"${KUBE_ADMIN_CERT}"'|g' kubernetes/kubeconfig
+- sed -i -e 's|KUBE_ADMIN_KEY|'"${KUBE_ADMIN_KEY}"'|g' kubernetes/kubeconfig
+- sed -i -e 's|BUILD_NAME|'"${BUILD_NAME}"'|g' kubernetes/*
 script:
 - sh travis_scripts/tag_build.sh
 - sh travis_scripts/build_services.sh
 - sh travis_scripts/deploy_to_docker_hub.sh
-- sh travis_scripts/deploy_to_amazon_ecs.sh
-# sh travis_scripts/trigger_platform_tests.sh
+- sh travis_scripts/deploy_to_mailru_mcs.sh
