@@ -31,8 +31,5 @@ spec:
         name: zuulserver
         ports:
         - containerPort: 5555
-        resources:
-          limits:
-            memory: "2073741824"
       restartPolicy: Always
 status: {}
