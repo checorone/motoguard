@@ -25,5 +25,5 @@ spec:
         resources:
           limits:
             memory: "1073741824"
-      restartPolicy: OnFailure
+      restartPolicy: Always
 status: {}
