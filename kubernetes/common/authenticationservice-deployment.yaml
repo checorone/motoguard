@@ -34,8 +34,5 @@ spec:
         name: authenticationservice
         ports:
         - containerPort: 8901
-        resources:
-          limits:
-            memory: "1073741824"
       restartPolicy: Always
 status: {}
