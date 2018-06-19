@@ -26,8 +26,5 @@ spec:
         name: eurekaserver
         ports:
         - containerPort: 8761
-        resources:
-          limits:
-            memory: "1073741824"
       restartPolicy: Always
 status: {}

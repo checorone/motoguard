@@ -31,8 +31,5 @@ spec:
         name: configserver
         ports:
         - containerPort: 8888
-        resources:
-          limits:
-            memory: 1e9
       restartPolicy: Always
 status: {}

@@ -34,7 +34,7 @@ spec:
         - name: KAFKASERVER_URI
           value: kafkaserver
         - name: PROFILE
-          value: aws-dev
+          value: default
         - name: SERVER_PORT
           value: "8085"
         - name: ZKSERVER_URI
@@ -43,8 +43,5 @@ spec:
         name: organizationservice
         ports:
         - containerPort: 8085
-        resources:
-          limits:
-            memory: "1073741824"
       restartPolicy: Always
 status: {}

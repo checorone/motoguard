@@ -27,8 +27,5 @@ spec:
         ports:
         - containerPort: 2181
         - containerPort: 9092
-        resources:
-          limits:
-            memory: "1073741824"
       restartPolicy: Always
 status: {}

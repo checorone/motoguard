@@ -1,5 +1,5 @@
 echo "Tagging build with $BUILD_NAME"
-export TARGET_URL="https://api.github.com/repos/checorone/motoguardservices/releases?access_token=$GITHUB_TOKEN"
+export TARGET_URL="https://api.github.com/repos/checorone/motoguard/releases?access_token=$GITHUB_TOKEN"
 
 body="{
   \"tag_name\": \"$BUILD_NAME\",
