@@ -10,7 +10,11 @@ metadata:
   name: zuulserver
 spec:
   replicas: 1
-  strategy: {}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavalible: 1
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null

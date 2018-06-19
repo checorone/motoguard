@@ -10,7 +10,11 @@ metadata:
   name: database
 spec:
   replicas: 1
-  strategy: {}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavalible: 1
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
@@ -29,6 +33,5 @@ spec:
         name: database
         ports:
         - containerPort: 5432
-        resources: {}
       restartPolicy: Always
 status: {}
