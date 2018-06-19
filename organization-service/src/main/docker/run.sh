@@ -11,9 +11,9 @@ while ! `nc -z eurekaserver  $(getPort $EUREKASERVER_PORT)`; do sleep 3; done
 echo "******* Eureka Server has started"
 
 echo "********************************************************"
-echo "Waiting for the database server to start on port $(getPort $DATABASESERVER_PORT)"
+echo "Waiting for the database server to start on port $(getPort $DATABASE_PORT)"
 echo "********************************************************"
-while ! `nc -z database $(getPort $DATABASESERVER_PORT)`; do sleep 3; done
+while ! `nc -z database $(getPort $DATABASE_PORT)`; do sleep 3; done
 echo "******** Database Server has started "
 
 
