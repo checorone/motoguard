@@ -22,7 +22,7 @@ before_install:
 - sed -i -e 's|KUBE_ENDPOINT|'"${KUBE_ENDPOINT}"'|g' kubernetes/kubeconfig
 - sed -i -e 's|KUBE_ADMIN_CERT|'"${KUBE_ADMIN_CERT}"'|g' kubernetes/kubeconfig
 - sed -i -e 's|KUBE_ADMIN_KEY|'"${KUBE_ADMIN_KEY}"'|g' kubernetes/kubeconfig
-- sed -i -e 's|BUILD_NAME|'"${BUILD_NAME}"'|g' kubernetes/*
+- sed -i -e 's|BUILD_NAME|'"${BUILD_NAME}"'|g' kubernetes/common
 script:
 - sh travis_scripts/tag_build.sh
 - sh travis_scripts/build_services.sh
