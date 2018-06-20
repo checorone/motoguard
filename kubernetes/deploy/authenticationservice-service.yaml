@@ -15,5 +15,6 @@ spec:
     targetPort: 8901
   selector:
     io.kompose.service: authenticationservice
+  type: loadBalancer
 status:
   loadBalancer: {}
