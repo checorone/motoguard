@@ -4,13 +4,13 @@ metadata:
   name: motoguard-ingress
 spec:
   rules:
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: zuulserver
-          servicePort: 5555
-      - path: /auth
-        backend:
-          serviceName: authenticationservice
-          servicePort: 8901
+  - http:
+    paths:
+    - path: /
+      backend:
+        serviceName: zuulserver
+        servicePort: 5555
+    - path: /auth
+      backend:
+        serviceName: authenticationservice
+        servicePort: 8901
