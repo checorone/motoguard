@@ -28,6 +28,18 @@ public class LicenseService {
     OrganizationRestTemplateClient organizationRestClient;
 
 
+    @HystrixCommand(fallbackMethod = "buildFallbackLicenseList",
+            threadPoolKey = "licenseThreadPool",
+            threadPoolProperties =
+                    {@HystrixProperty(name = "coreSize",value="30"),
+                     @HystrixProperty(name="maxQueueSize", value="10")},
+            commandProperties={         
+                     @HystrixProperty(name="circuitBreaker.requestVolumeThreshold", value="10"),
+                     @HystrixProperty(name="circuitBreaker.errorThresholdPercentage", value="75"),
+                     @HystrixProperty(name="circuitBreaker.sleepWindowInMilliseconds", value="7000"),
+                     @HystrixProperty(name="metrics.rollingStats.timeInMilliseconds", value="15000"),
+                     @HystrixProperty(name="metrics.rollingStats.numBuckets", value="5")}
+    )
     public License getLicense(String organizationId,String licenseId) {
         License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
 
@@ -46,22 +58,6 @@ public class LicenseService {
         return organizationRestClient.getOrganization(organizationId);
     }
 
-    private void randomlyRunLong(){
-      Random rand = new Random();
-
-      int randomNum = rand.nextInt((3 - 1) + 1) + 1;
-
-      if (randomNum==3) sleep();
-    }
-
-    private void sleep(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     @HystrixCommand(fallbackMethod = "buildFallbackLicenseList",
             threadPoolKey = "licenseByOrgThreadPool",
@@ -76,8 +72,6 @@ public class LicenseService {
                      @HystrixProperty(name="metrics.rollingStats.numBuckets", value="5")}
     )
     public List<License> getLicensesByOrg(String organizationId){
-        randomlyRunLong();
-
         return licenseRepository.findByOrganizationId(organizationId);
     }
 
