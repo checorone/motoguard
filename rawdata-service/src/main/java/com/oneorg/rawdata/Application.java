@@ -1,7 +1,5 @@
 package com.oneorg.rawdata;
 
-import com.oneorg.rawdata.config.ServiceConfig;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +25,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableResourceServer
 public class Application {
 
-    @Autowired
-    private ServiceConfig serviceConfig;
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
@@ -38,20 +34,20 @@ public class Application {
         return new OAuth2RestTemplate(details, oauth2ClientContext);
     }
 
-    @Bean
-    public JedisConnectionFactory jedisConnectionFactory() {
-        JedisConnectionFactory jedisConnFactory = new JedisConnectionFactory();
-        jedisConnFactory.setHostName( serviceConfig.getRedisServer());
-        jedisConnFactory.setPort( serviceConfig.getRedisPort() );
-        return jedisConnFactory;
-    }
+    // @Bean
+    // public JedisConnectionFactory jedisConnectionFactory() {
+    //     JedisConnectionFactory jedisConnFactory = new JedisConnectionFactory();
+    //     jedisConnFactory.setHostName( serviceConfig.getRedisServer());
+    //     jedisConnFactory.setPort( serviceConfig.getRedisPort() );
+    //     return jedisConnFactory;
+    // }
 
-    @Bean
-    public RedisTemplate<String, Object> redisTemplate() {
-        RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();
-        template.setConnectionFactory(jedisConnectionFactory());
-        return template;
-    }
+    // @Bean
+    // public RedisTemplate<String, Object> redisTemplate() {
+    //     RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();
+    //     template.setConnectionFactory(jedisConnectionFactory());
+    //     return template;
+    // }
 
 
     public static void main(String[] args) {
