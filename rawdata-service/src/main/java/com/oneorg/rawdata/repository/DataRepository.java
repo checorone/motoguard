@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface DataRepository extends CrudRepository<License,String>  {
+public interface DataRepository extends CrudRepository<Data,String>  {
     public License findByDeviceId(String deviceId);
 }

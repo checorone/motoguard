@@ -63,7 +63,7 @@ public class ArtikCloudRestTemplateClient {
         
 
         /*Save the record from cache*/
-        String json = ResponseEntity.getBody();
+        String json = responseEntity.getBody();
         logger.debug("Response from cloud: {}", json);
         // if (data!=null) {
         //     cacheDataObject(data);

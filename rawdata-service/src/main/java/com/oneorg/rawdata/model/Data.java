@@ -125,7 +125,7 @@ public class Data{
     return gz;
   }
 
-  public void setGy(float gz) {
+  public void setGz(float gz) {
     this.gz = gz;
   }
 

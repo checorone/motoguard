@@ -29,7 +29,7 @@ public class DataServiceController {
     @Autowired
     private HttpServletRequest request;
 
-    private static final Logger logger = LoggerFactory.getLogger(LicenseServiceController.class);
+    private static final Logger logger = LoggerFactory.getLogger(DataServiceController.class);
 
 
     @RequestMapping(value="/{deviceId}",method = RequestMethod.GET)

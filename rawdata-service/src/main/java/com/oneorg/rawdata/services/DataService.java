@@ -34,7 +34,7 @@ public class DataService {
     }
 
     @HystrixCommand
-    private String getMessage(String messageId) {
+    public String getMessage(String messageId) {
         return artikCloudRestClient.getMessage(messageId);
     }
 
