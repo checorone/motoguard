@@ -1,6 +1,6 @@
-package com.oneorg.licenses;
+package com.oneorg.rawdata;
 
-import com.oneorg.licenses.config.ServiceConfig;
+import com.oneorg.rawdata.config.ServiceConfig;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

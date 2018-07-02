@@ -1,4 +1,4 @@
-package com.oneorg.licenses.utils;
+package com.oneorg.rawdata.utils;
 
 import org.springframework.stereotype.Component;
 
