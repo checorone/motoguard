@@ -40,4 +40,4 @@ java -Djava.security.egd=file:/dev/./urandom -Dserver.port=$SERVER_PORT   \
      -Dspring.cloud.stream.kafka.binder.zkNodes=$KAFKASERVER_URI          \
      -Dspring.cloud.stream.kafka.binder.brokers=$ZKSERVER_URI             \
      -Dsecurity.oauth2.resource.userInfoUri=$AUTHSERVER_URI               \
-     -jar /usr/local/organizationservice/@project.build.finalName@.jar
+     -jar /usr/local/devicesservice/@project.build.finalName@.jar

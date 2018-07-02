@@ -7,7 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Config Server</name>
+  <name>Motoguard Config Server</name>
   <description>Motoguard Config Server</description>
 
   <parent>
