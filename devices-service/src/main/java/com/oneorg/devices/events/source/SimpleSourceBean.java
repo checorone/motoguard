@@ -1,6 +1,6 @@
 package com.oneorg.devices.events.source;
 
-import com.oneorg.devices.event.models.OrganizationChangeModel;
+import com.oneorg.devices.event.models.DeviceChangeModel;
 import com.oneorg.devices.utils.UserContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,10 +21,10 @@ public class SimpleSourceBean {
         this.source = source;
     }
 
-    public void publishOrgChange(String action,String orgId){
-       logger.debug("Sending Kafka message {} for Organization Id: {}", action, orgId);
-        OrganizationChangeModel change =  new OrganizationChangeModel(
-                OrganizationChangeModel.class.getTypeName(),
+    public void publishDevChange(String action,String devId){
+        logger.debug("Sending Kafka message {} for Device Id: {}", action, devId);
+        DeviceChangeModel change =  new deviceChangeModel(
+                DeviceChangeModel.class.getTypeName(),
                 action,
                 orgId,
                 UserContext.getCorrelationId());

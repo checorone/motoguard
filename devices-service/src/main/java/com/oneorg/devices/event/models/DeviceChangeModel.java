@@ -1,17 +1,17 @@
 package com.oneorg.devices.event.models;
 
-public class OrganizationChangeModel{
+public class DeviceChangeModel{
     private String type;
     private String action;
-    private String organizationId;
+    private String deviceId;
     private String correlationId;
 
 
-    public  OrganizationChangeModel(String type, String action, String organizationId, String correlationId) {
+    public  DeviceChangeModel(String type, String action, String deviceId, String correlationId) {
         super();
         this.type   = type;
         this.action = action;
-        this.organizationId = organizationId;
+        this.deviceId = deviceId;
         this.correlationId = correlationId;
     }
 
@@ -32,12 +32,12 @@ public class OrganizationChangeModel{
     }
 
 
-    public String getOrganizationId() {
-        return organizationId;
+    public String getDeviceId() {
+        return deviceId;
     }
 
-    public void setOrganizationId(String organizationId) {
-        this.organizationId = organizationId;
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
 
