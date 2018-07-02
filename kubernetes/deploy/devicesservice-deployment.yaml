@@ -41,8 +41,8 @@ spec:
           value: "8085"
         - name: ZKSERVER_URI
           value: kafkaserver
-        image: motoguard/watchservice:BUILD_NAME
-        name: organizationservice
+        image: motoguard/devicesservice:BUILD_NAME
+        name: devicesservice
         ports:
         - containerPort: 8085
       restartPolicy: Always

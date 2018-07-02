@@ -77,7 +77,7 @@ authenticationservice:
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
 organizationservice:
-    image: motoguard/watchservice:${BUILD_NAME}
+    image: motoguard/devicesservice:${BUILD_NAME}
     mem_limit: 1073741824
     ports:
       - "8085:8085"
