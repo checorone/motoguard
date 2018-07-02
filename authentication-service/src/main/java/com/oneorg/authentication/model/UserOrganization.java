@@ -1,4 +1,4 @@
-package com.thoughtmechanix.authentication.model;
+package com.oneorg.authentication.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
