@@ -43,15 +43,15 @@ public class DataServiceController {
     //     return licenseService.getLicense(organizationId, licenseId);
     // }
 
-    @RequestMapping(value="/{deviceId}",method = RequestMethod.PUT)
-    public void updateData( @PathVariable("deviceId") String deviceId, @RequestBody Data data) {
-        dataService.updateData(data);
-    }
+    // @RequestMapping(value="/{deviceId}",method = RequestMethod.PUT)
+    // public void updateData( @PathVariable("deviceId") String deviceId, @RequestBody Data data) {
+    //     dataService.updateData(data);
+    // }
 
-    @RequestMapping(value="/",method = RequestMethod.POST)
-    public void saveData(@RequestBody Data data) {
-        dataService.saveData(data);
-    }
+    // @RequestMapping(value="/",method = RequestMethod.POST)
+    // public void saveData(@RequestBody Data data) {
+    //     dataService.saveData(data);
+    // }
 
     @RequestMapping(value="/{dataId}",method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
