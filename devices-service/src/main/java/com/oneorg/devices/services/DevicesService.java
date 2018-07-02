@@ -16,7 +16,7 @@ public class DevicesService {
     @Autowired
     SimpleSourceBean simpleSourceBean;
 
-    public Organization getDev(String devId) {
+    public Device getDev(String devId) {
         return devRepository.findById(devId);
     }
 
