@@ -6,8 +6,8 @@ metadata:
     kompose.version: 1.12.0 (0ab07be)
   creationTimestamp: null
   labels:
-    io.kompose.service: organizationservice
-  name: organizationservice
+    io.kompose.service: devicesservice
+  name: devicesservice
 spec:
   replicas: 1
   strategy:
@@ -19,7 +19,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        io.kompose.service: organizationservice
+        io.kompose.service: devicesservice
     spec:
       containers:
       - env:

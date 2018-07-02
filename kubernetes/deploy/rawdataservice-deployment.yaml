@@ -44,7 +44,7 @@ spec:
         - name: ZKSERVER_URI
           value: kafkaserver
         image: motoguard/rawdataservice:BUILD_NAME
-        name: licensingservice
+        name: rawdataservice
         ports:
         - containerPort: 8080
       restartPolicy: Always
