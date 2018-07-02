@@ -25,7 +25,7 @@ public class DevicesServiceController {
     private static final Logger logger = LoggerFactory.getLogger(DevicesServiceController.class);
 
     @RequestMapping(value="/{deviceId}",method = RequestMethod.GET)
-    public Organization getDevice( @PathVariable("deviceId") String deviceId) {
+    public Device getDevice( @PathVariable("deviceId") String deviceId) {
         logger.debug("Looking up data for dev {}", deviceId);
 
         Device dev = devService.getDev(deviceId);
