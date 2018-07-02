@@ -1,7 +1,5 @@
 package com.oneorg.rawdata.services;
 
-
-import com.oneorg.rawdata.model.Organization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
