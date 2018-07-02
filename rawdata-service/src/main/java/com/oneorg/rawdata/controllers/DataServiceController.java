@@ -34,7 +34,6 @@ public class DataServiceController {
 
     @RequestMapping(value="/{deviceId}",method = RequestMethod.GET)
     public String getData( @PathVariable("deviceId") String deviceId) {
-
         return dataService.getMessage(deviceId);
     }
 

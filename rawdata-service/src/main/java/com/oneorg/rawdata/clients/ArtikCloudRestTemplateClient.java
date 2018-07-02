@@ -36,11 +36,11 @@ public class ArtikCloudRestTemplateClient {
         try {
             dataRepository.saveData(data);
         }catch (Exception ex){
-            logger.error("Unable to cache data {} in DB. Exception {}", data.getId(), ex);
+            logger.error("Unable to cache data {} in DB. Exception {}", data.getDeviceId(), ex);
         }
     }
 
-    public String getData(String deviceId){
+    public String getMessage(String deviceId){
         logger.debug("In Data Service.getData: {}", UserContext.getCorrelationId());
 
         // Data data = checkCache(deviceId);

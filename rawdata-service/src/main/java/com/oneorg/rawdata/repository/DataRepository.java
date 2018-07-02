@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface DataRepository extends CrudRepository<Data,String>  {
-    public License findByDeviceId(String deviceId);
+    public Data findByDeviceId(String deviceId);
 }
