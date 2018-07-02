@@ -29,7 +29,7 @@ public class DataService {
 
     @HystrixCommand
     public Data getData(String deviceId) {
-        Data data = DataRepository.findByDeviceId(deviceId);
+        Data data = dataRepository.findByDeviceId(deviceId);
         return data;
     }
 
@@ -38,13 +38,13 @@ public class DataService {
         return artikCloudRestClient.getMessage(messageId);
     }
 
-    public void saveData(Data data){
-        dataRepository.save(data);
-    }
+    // public void saveData(Data data){
+    //     dataRepository.save(data);
+    // }
 
-    public void updateData(Data data){
-        dataRepository.save(data);
-    }
+    // public void updateData(Data data){
+    //     dataRepository.save(data);
+    // }
 
     public void deleteData(Data data){
         dataRepository.delete( data.getDeviceId());
