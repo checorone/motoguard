@@ -1,4 +1,4 @@
-package com.oneorg.licenses.utils;
+package com.oneorg.rawdata.utils;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
