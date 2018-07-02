@@ -23,10 +23,10 @@ public class SimpleSourceBean {
 
     public void publishDevChange(String action,String devId){
         logger.debug("Sending Kafka message {} for Device Id: {}", action, devId);
-        DeviceChangeModel change =  new deviceChangeModel(
+        DeviceChangeModel change =  new DeviceChangeModel(
                 DeviceChangeModel.class.getTypeName(),
                 action,
-                orgId,
+                devId,
                 UserContext.getCorrelationId());
 
         source.output().send(MessageBuilder.withPayload(change).build());

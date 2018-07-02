@@ -32,7 +32,7 @@ public class UserContextFilter implements Filter {
         String correlationId = httpServletRequest.getHeader(UserContext.CORRELATION_ID);
         String userId = httpServletRequest.getHeader(UserContext.USER_ID);
         String authToken = httpServletRequest.getHeader(UserContext.AUTH_TOKEN);
-        String orgId = httpServletRequest.getHeader(UserContext.DEV_ID);
+        String devId = httpServletRequest.getHeader(UserContext.DEV_ID);
 
 
         UserContext.setCorrelationId(correlationId);

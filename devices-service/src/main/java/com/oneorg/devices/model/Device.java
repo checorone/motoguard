@@ -31,7 +31,7 @@ public class Device {
         this.id = id;
     }
 
-    public String getConnected() {
+    public Boolean getConnected() {
         return connected;
     }
 
