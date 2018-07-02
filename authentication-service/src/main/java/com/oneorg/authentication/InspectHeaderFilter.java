@@ -1,4 +1,4 @@
-package com.thoughtmechanix.authentication;
+package com.oneorg.authentication;
 
 import org.springframework.stereotype.Component;
 

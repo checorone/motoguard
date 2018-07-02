@@ -1,4 +1,4 @@
-package com.thoughtmechanix.authentication.security;
+package com.oneorg.authentication.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

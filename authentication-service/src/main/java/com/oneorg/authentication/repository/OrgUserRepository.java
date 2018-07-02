@@ -1,7 +1,7 @@
-package com.thoughtmechanix.authentication.repository;
+package com.oneorg.authentication.repository;
 
 
-import com.thoughtmechanix.authentication.model.UserOrganization;
+import com.oneorg.authentication.model.UserOrganization;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
