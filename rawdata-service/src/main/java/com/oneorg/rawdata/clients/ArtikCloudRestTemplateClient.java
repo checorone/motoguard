@@ -59,12 +59,12 @@ public class ArtikCloudRestTemplateClient {
         headers.add("Authorization", "Bearer 84f792c411614df49f45806d0017bd04");
         HttpEntity<String> requestEntity = new HttpEntity<String>("", headers);
         ResponseEntity<String> responseEntity = rest.exchange(server, HttpMethod.GET, requestEntity, String.class);
-        HttpStatus status = responseEntity.getStatusCode());
-        logger.debug("Response from cloud: {}", Entity.getBody());
+        HttpStatus status = responseEntity.getStatusCode();
+        
 
         /*Save the record from cache*/
-        String json = Entity.getBody();
-
+        String json = ResponseEntity.getBody();
+        logger.debug("Response from cloud: {}", json);
         // if (data!=null) {
         //     cacheDataObject(data);
         // }
