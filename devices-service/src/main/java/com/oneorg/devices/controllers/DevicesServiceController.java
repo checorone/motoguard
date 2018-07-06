@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
-@RequestMapping(value="v1/devices")
+@RequestMapping(value="v1")
 public class DevicesServiceController {
     @Autowired
     private DevicesService devService;

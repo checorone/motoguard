@@ -3,7 +3,6 @@ package com.oneorg.rawdata.services;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.oneorg.rawdata.clients.ArtikCloudRestTemplateClient;
-import com.oneorg.rawdata.config.ServiceConfig;
 import com.oneorg.rawdata.model.Data;
 import com.oneorg.rawdata.repository.DataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +18,6 @@ public class DataService {
 
     @Autowired
     private DataRepository dataRepository;
-
-    @Autowired
-    ServiceConfig config;
 
     @Autowired
     ArtikCloudRestTemplateClient artikCloudRestClient;
