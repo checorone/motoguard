@@ -21,8 +21,8 @@ public class NewsServiceController {
     private NewsService newsService;
     private static final Logger logger = LoggerFactory.getLogger(NewsServiceController.class);
 
-    @RequestMapping(value="",method = RequestMethod.GET)
-    public Iterable<News> getNews() {
+    @RequestMapping(value="",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Iterable<News> getNews() {
         logger.debug("Looking up for news");
         return newsService.getNews();
     }
