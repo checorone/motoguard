@@ -24,7 +24,7 @@ public class UserContext {
     public static String getUserId() { return userId.get(); }
     public static void setUserId(String aUser) {userId.set(aUser);}
 
-    public static String getNewsId() { return devId.get(); }
+    public static String getNewsId() { return newsId.get(); }
     public static void setNewsId(String aNews) {newsId.set(aNews);}
 
     public static HttpHeaders getHttpHeaders(){
