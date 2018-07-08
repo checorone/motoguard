@@ -6,3 +6,4 @@ docker push motoguard/devicesservice:$BUILD_NAME
 docker push motoguard/configservice:$BUILD_NAME
 docker push motoguard/discoveryservice:$BUILD_NAME
 docker push motoguard/routingservice:$BUILD_NAME
+docker push motoguard/newsservice:$BUILD_NAME
