@@ -16,7 +16,6 @@ echo "********************************************************"
 while ! `nc -z database $(getPort $DATABASE_PORT)`; do sleep 3; done
 echo "******** Database Server has started "
 
-
 echo "********************************************************"
 echo "Waiting for the configuration server to start on port $(getPort $CONFIGSERVER_PORT)"
 echo "********************************************************"
@@ -24,7 +23,7 @@ while ! `nc -z configserver $(getPort $CONFIGSERVER_PORT)`; do sleep 3; done
 echo "*******  Configuration Server has started"
 
 echo "********************************************************"
-echo "Starting Organization Service                           "
+echo "Starting News Service                           "
 echo "Using profile: $PROFILE"
 echo "********************************************************"
 java -Djava.security.egd=file:/dev/./urandom -Dserver.port=$SERVER_PORT   \
