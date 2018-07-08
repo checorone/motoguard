@@ -1,4 +1,4 @@
-package com.oneorg.devices.utils;
+package com.oneorg.news.utils;
 
 import org.springframework.http.HttpHeaders;
 
