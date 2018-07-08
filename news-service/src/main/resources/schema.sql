@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS news;
 CREATE TABLE news (
 	id SERIAL,
   	label VARCHAR(150) NOT NULL,
-    shortText VARCHAR(255) NOT NULL,
+    shortText TEXT NOT NULL,
     fullText TEXT NOT NULL,
     pictureUrl VARCHAR(155) NOT NULL,
     pub_date VARCHAR(50) NOT NULL,
