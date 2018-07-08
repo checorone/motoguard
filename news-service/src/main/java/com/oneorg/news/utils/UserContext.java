@@ -12,7 +12,7 @@ public class UserContext {
     private static final ThreadLocal<String> correlationId= new ThreadLocal<String>();
     private static final ThreadLocal<String> authToken= new ThreadLocal<String>();
     private static final ThreadLocal<String> userId = new ThreadLocal<String>();
-    private static final ThreadLocal<String> devId = new ThreadLocal<String>();
+    private static final ThreadLocal<String> newsId = new ThreadLocal<String>();
 
 
     public static String getCorrelationId() { return correlationId.get(); }
@@ -25,7 +25,7 @@ public class UserContext {
     public static void setUserId(String aUser) {userId.set(aUser);}
 
     public static String getNewsId() { return devId.get(); }
-    public static void setNewsId(String aNews) {newsID.set(aNews);}
+    public static void setNewsId(String aNews) {newsId.set(aNews);}
 
     public static HttpHeaders getHttpHeaders(){
         HttpHeaders httpHeaders = new HttpHeaders();
