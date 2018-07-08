@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Table(name = "news")
 public class News implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     Integer id;
 
