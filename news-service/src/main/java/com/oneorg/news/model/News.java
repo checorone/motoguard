@@ -4,9 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Data;
 import java.io.Serializable;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor   
 @Table(name = "news")
 public class News implements Serializable {
     @Id
