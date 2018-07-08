@@ -7,4 +7,4 @@ CREATE TABLE devices (
 
 
 INSERT INTO devices (device_id, type, owner_username)
-VALUES ('abcd1234-efgh', false, 'Стандартное устроиство', 'admin@gmail.com');
+VALUES ('abcd1234-efgh', 'Стандартное устроиство', 'admin@gmail.com');

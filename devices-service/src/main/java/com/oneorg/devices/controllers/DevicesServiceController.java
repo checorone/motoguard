@@ -1,14 +1,10 @@
 package com.oneorg.devices.controllers;
 
-
-import com.oneorg.devices.events.source.SimpleSourceBean;
 import com.oneorg.devices.model.Device;
 import com.oneorg.devices.services.DevicesService;
-import com.oneorg.devices.utils.UserContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;

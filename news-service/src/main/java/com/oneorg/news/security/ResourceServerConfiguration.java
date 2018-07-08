@@ -1,4 +1,4 @@
-package com.oneorg.devices.security;
+package com.oneorg.news.security;
 
 
 import org.springframework.context.annotation.Configuration;

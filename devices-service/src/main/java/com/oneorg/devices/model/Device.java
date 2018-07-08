@@ -12,9 +12,6 @@ public class Device {
     @Column(name = "device_id", nullable = false)
     String id;
 
-    @Column(name = "connected", nullable = false)
-    Boolean connected;
-
     @Column(name = "type", nullable = false)
     String type;
 
@@ -29,14 +26,6 @@ public class Device {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public Boolean getConnected() {
-        return connected;
-    }
-
-    public void setConnected(Boolean connected) {
-        this.connected = connected;
     }
 
     public String getDeviceType() {
