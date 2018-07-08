@@ -10,8 +10,9 @@ import java.io.Serializable;
 @Table(name = "news")
 public class News implements Serializable {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    String id;
+    Integer id;
 
 	@Column(name = "label", nullable = false)
     String label;
@@ -29,11 +30,11 @@ public class News implements Serializable {
     String pub_date;
     
     
-    public String getId() {
+    public Integer getId() {
  		return id;
  	}
 
- 	public void setId(String id) {
+ 	public void setId(Integer id) {
  		this.id = id;
  	}
 
