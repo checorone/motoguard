@@ -38,7 +38,7 @@ public class UserContextFilter implements Filter {
         UserContext.setCorrelationId(correlationId);
         UserContext.setUserId(userId);
         UserContext.setAuthToken(authToken);
-        UserContext.setDevId(newsId);
+        UserContext.setNewsId(newsId);
 
         logger.debug("Exiting the UserContextFilter");
         filterChain.doFilter(httpServletRequest, servletResponse);
