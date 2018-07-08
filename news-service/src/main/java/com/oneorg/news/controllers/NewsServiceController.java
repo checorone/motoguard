@@ -3,6 +3,9 @@ package com.oneorg.news.controllers;
 import com.oneorg.news.model.News;
 import com.oneorg.news.services.NewsService;
 import com.oneorg.news.utils.UserContext;
+
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +25,8 @@ public class NewsServiceController {
     private NewsService newsService;
     private static final Logger logger = LoggerFactory.getLogger(NewsServiceController.class);
 
-    @RequestMapping(value="",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody Iterable<News> getNews() {
+    @RequestMapping(value="",method = RequestMethod.GET)
+    public @ResponseBody List<News> getNews() {
         logger.debug("Looking up for news");
         return newsService.getNews();
     }

@@ -5,15 +5,19 @@ import com.oneorg.news.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class NewsService {
     @Autowired
     private NewsRepository newsRepository;
 
-    public Iterable<News> getNews() {
-        return newsRepository.findAll();
+    public List<News> getNews() {
+    	Iterable<News> source = newsRepository.findAll();
+    	List<News> target = new ArrayList<>();
+    	source.forEach(target::add);
+        return target;
     }
 
     public void saveNews(News news){
