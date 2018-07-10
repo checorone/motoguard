@@ -1,13 +1,12 @@
 DROP TABLE IF EXISTS news;
 
 CREATE TABLE news (
-	id VARCHAR(150) NOT NULL,
+	id VARCHAR(150) PRIMARY KEY NOT NULL,
   	label VARCHAR(150) NOT NULL,
     shortText TEXT NOT NULL,
     fullText TEXT NOT NULL,
     pictureUrl VARCHAR(155) NOT NULL,
-    pub_date VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id));
+    pub_date VARCHAR(50) NOT NULL);
 
 
 INSERT INTO news(id,label,shortText,fullText,pictureUrl,pub_date)
