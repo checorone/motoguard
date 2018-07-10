@@ -20,7 +20,7 @@ public class NewsService {
     private static final Logger logger = LoggerFactory.getLogger(NewsServiceController.class);
 
     public List<News> getNews() {
-    	Iterable<News> source = newsRepository.findAllNews();
+    	Iterable<News> source = newsRepository.findAll();
     	List<News> target = new ArrayList<>();
     	source.forEach(target::add);
         return target;

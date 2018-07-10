@@ -15,17 +15,17 @@ public class News{
 	@Column(name = "label", nullable = false)
     String label;
 
-    @Column(name = "shortText", nullable = false)
+    @Column(name = "short_text", nullable = false)
     String shortText;
 
-    @Column(name = "fullText", nullable = false)
+    @Column(name = "full_text", nullable = false)
     String fullText;
 
-    @Column(name = "pictureUrl", nullable = false)
+    @Column(name = "picture_url", nullable = false)
     String pictureUrl;
 
     @Column(name = "pub_date", nullable = false)
-    String pub_date;
+    String pubDate;
     
     
     public String getId() {
@@ -68,12 +68,12 @@ public class News{
  		this.pictureUrl = pictureUrl;
  	}
 
- 	public String getPub_date() {
- 		return pub_date;
+ 	public String getPubDate() {
+ 		return pubDate;
  	}
 
- 	public void setPub_date(String pub_date) {
- 		this.pub_date = pub_date;
+ 	public void setPubDate(String pubDate) {
+ 		this.pubDate = pubDate;
  	}
 
 }
