@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class News{
     @Id
     @Column(name = "id", nullable = false)
-    String newsId;
+    String id;
 
 	@Column(name = "label", nullable = false)
     String label;
@@ -28,12 +28,12 @@ public class News{
     String pub_date;
     
     
-    public String getNewsId() {
- 		return newsId;
+    public String getId() {
+ 		return id;
  	}
 
- 	public void setNewsId(String newsId) {
- 		this.newsId = newsId;
+ 	public void setId(String id) {
+ 		this.id = id;
  	}
 
  	public String getLabel() {
