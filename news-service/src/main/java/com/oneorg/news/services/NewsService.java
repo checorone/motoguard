@@ -35,6 +35,6 @@ public class NewsService {
     }
 
     public void deleteNews(News news){
-        newsRepository.delete( news.getId());
+        newsRepository.delete( news.getNewsId());
     }
 }
