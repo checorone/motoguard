@@ -2,7 +2,6 @@ package com.oneorg.news.controllers;
 
 import com.oneorg.news.model.News;
 import com.oneorg.news.services.NewsService;
-import com.oneorg.news.utils.UserContext;
 
 import java.util.List;
 
@@ -27,8 +26,10 @@ public class NewsServiceController {
 
     @RequestMapping(value="",method = RequestMethod.GET)
     public @ResponseBody List<News> getNews() {
-        logger.debug("Looking up for news");
-        return newsService.getNews();
+        logger.info("Looking up for news");
+        List<News> ns = newsService.getNews();
+        logger.info(String.valueOf(ns.size()));
+        return ns;
     }
 
     @RequestMapping(value="",method = RequestMethod.PUT)

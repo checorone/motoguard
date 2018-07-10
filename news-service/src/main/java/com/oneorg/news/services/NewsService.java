@@ -17,7 +17,6 @@ public class NewsService {
     	Iterable<News> source = newsRepository.findAll();
     	List<News> target = new ArrayList<>();
     	source.forEach(target::add);
-    	System.out.write(target.size());
         return target;
     }
 
