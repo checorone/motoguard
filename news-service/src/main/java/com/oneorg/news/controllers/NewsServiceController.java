@@ -25,11 +25,9 @@ public class NewsServiceController {
     private static final Logger logger = LoggerFactory.getLogger(NewsServiceController.class);
 
     @RequestMapping(value="",method = RequestMethod.GET)
-    public @ResponseBody List<News> getNews() {
+    public News getNews() {
         logger.info("Looking up for news");
-        List<News> ns = newsService.getNews();
-        logger.info(String.valueOf(ns.size()));
-        return ns;
+        return newsService.getNews();
     }
 
     @RequestMapping(value="",method = RequestMethod.PUT)

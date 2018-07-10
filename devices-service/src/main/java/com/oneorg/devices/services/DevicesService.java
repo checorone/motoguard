@@ -17,7 +17,8 @@ public class DevicesService {
     SimpleSourceBean simpleSourceBean;
 
     public Device getDev(String devId) {
-        return devRepository.findById(devId);
+    	Device dev = devRepository.findById(devId);
+        return dev;
     }
 
     public void saveDev(Device dev){
