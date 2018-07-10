@@ -12,6 +12,9 @@ public class Device {
     @Column(name = "device_id", nullable = false)
     String id;
 
+    @Column(name = "artik_id", nullable = false)
+    String artikId;
+
     @Column(name = "type", nullable = false)
     String type;
 
@@ -26,6 +29,15 @@ public class Device {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getArtikId() {
+        return artikId;
+    }
+
+
+    public void setArtikId(String articId) {
+        this.articId = articId;
     }
 
     public String getDeviceType() {

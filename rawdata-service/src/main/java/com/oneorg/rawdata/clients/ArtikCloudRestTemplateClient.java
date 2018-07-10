@@ -12,6 +12,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import cloud.artik.client.ApiClient;
+import cloud.artik.client.ApiException;
+import cloud.artik.client.Configuration;
+import cloud.artik.client.auth.*;
+import cloud.artik.model.SubscriptionEnvelope;
+import cloud.artik.model.SubscriptionInfo;
+import cloud.artik.api.SubscriptionsApi;
 
 import org.springframework.stereotype.Component;
 
@@ -40,8 +47,8 @@ public class ArtikCloudRestTemplateClient {
     //     }
     // }
 
-    public String getMessage(String deviceId){
-        logger.debug("In Data Service.getData: {}", UserContext.getCorrelationId());
+    public void subscribe(String deviceId){
+        logger.debug("In subscribe method: {}", UserContext.getCorrelationId());
 
         // Data data = checkCache(deviceId);
 
@@ -50,26 +57,32 @@ public class ArtikCloudRestTemplateClient {
         //     return data;
         // }
 
-        logger.debug("Unable to locate organization from the DB cache: {}.", deviceId);
+        //logger.debug("Unable to locate organization from the DB cache: {}.", deviceId);
 
-        String server = "https://api.artik.cloud/v1.1/messages/last?count=10&sdids=3dcc6661784f4bd2b21dc0a8ccf47084";
-        RestTemplate rest = new RestTemplate();
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json");
-        headers.add("Authorization", "Bearer 84f792c411614df49f45806d0017bd04");
-        HttpEntity<String> requestEntity = new HttpEntity<String>("", headers);
-        ResponseEntity<String> responseEntity = rest.exchange(server, HttpMethod.GET, requestEntity, String.class);
-        HttpStatus status = responseEntity.getStatusCode();
+      ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+      // Configure OAuth2 access token for authorization: artikcloud_oauth
+      OAuth artikcloud_oauth = (OAuth) defaultClient.getAuthentication("artikcloud_oauth");
+      artikcloud_oauth.setAccessToken("c8f17e3149174eb18959dce27b6381ff");
+
+      SubscriptionsApi apiInstance = new SubscriptionsApi();
+      SubscriptionInfo subscriptionInfo = new SubscriptionInfo();
+      subscriptionInfo.setMessageType("message");
+      subscriptionInfo.setSdid("3dcc6661784f4bd2b21dc0a8ccf47084");
+      subscriptionInfo.setSubscriptionType("httpCallback");
+      try {
+          SubscriptionEnvelope result = apiInstance.createSubscription(subscriptionInfo);
+          logger.info(result.toString());
+      } catch (ApiException e) {
+          logger.warn("Exception when calling SubscriptionsApi#createSubscription");
+          e.printStackTrace();
+      }
         
 
         /*Save the record from cache*/
-        String json = responseEntity.getBody();
-        logger.debug("Response from cloud: {}", json);
         // if (data!=null) {
         //     cacheDataObject(data);
         // }
-
-        return json;
     }
 
 }
