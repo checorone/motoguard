@@ -19,16 +19,11 @@ public class NewsService {
     
     private static final Logger logger = LoggerFactory.getLogger(NewsServiceController.class);
 
-    public News getNews() {
-//    	Iterable<News> source = newsRepository.findAll();
-//    	logger.info(String.valueOf(newsRepository.count()));
-//    	List<News> target = new ArrayList<>();
-//    	source.forEach(target::add);
-    	News ns = newsRepository.findById("1");
-//    	List<News> target = new ArrayList<>();
-    	logger.info(ns.getPub_date());
-//    	target.add(ns);
-        return ns;
+    public List<News> getNews() {
+    	Iterable<News> source = newsRepository.findAllNews();
+    	List<News> target = new ArrayList<>();
+    	source.forEach(target::add);
+        return target;
     }
 
     public void saveNews(News news){
