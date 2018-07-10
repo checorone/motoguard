@@ -13,7 +13,7 @@ public class News implements Serializable {
 	
     @Id
     @Column(name = "id", nullable = false)
-    Integer id;
+    String id;
 
 	@Column(name = "label", nullable = false)
     String label;
@@ -31,11 +31,11 @@ public class News implements Serializable {
     String pub_date;
     
     
-    public Integer getId() {
+    public String getId() {
  		return id;
  	}
 
- 	public void setId(Integer id) {
+ 	public void setId(String id) {
  		this.id = id;
  	}
 
