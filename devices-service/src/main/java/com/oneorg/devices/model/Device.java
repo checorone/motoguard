@@ -36,8 +36,8 @@ public class Device {
     }
 
 
-    public void setArtikId(String articId) {
-        this.articId = articId;
+    public void setArtikId(String artikId) {
+        this.artikId = artikId;
     }
 
     public String getDeviceType() {
