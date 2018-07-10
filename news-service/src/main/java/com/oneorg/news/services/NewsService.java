@@ -24,12 +24,11 @@ public class NewsService {
 //    	logger.info(String.valueOf(newsRepository.count()));
 //    	List<News> target = new ArrayList<>();
 //    	source.forEach(target::add);
-//    	News ns = new News();
-//    	ns = newsRepository.findById("1");
+    	News ns = newsRepository.findById("1");
 //    	List<News> target = new ArrayList<>();
-//    	logger.info(ns.getPub_date());
+    	logger.info(ns.getPub_date());
 //    	target.add(ns);
-        return newsRepository.findById(String.valueOf("1"));
+        return ns;
     }
 
     public void saveNews(News news){
