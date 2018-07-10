@@ -9,8 +9,8 @@ import javax.persistence.Table;
 @Table(name = "news")
 public class News{
     @Id
-    @Column(name = "id", nullable = false)
-    String id;
+    @Column(name = "news_id", nullable = false)
+    String newsId;
 
 	@Column(name = "label", nullable = false)
     String label;
